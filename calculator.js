@@ -14,11 +14,13 @@ app.get("/", function (req, res) {
 });
 
 //Sum up!
-app.post("/", function (req, res) {
-  console.log("rea.body ---->", req.body);
-  console.log("rea.body.num1 ", req.body.num1);
+app.post("/sum", function (req, res) {
+    console.log('this is SUM');
+  console.log("req.body ---->", req.body);
+  console.log("req.body.num1 ", req.body.num1);
 
-  let firstInput = JSON.parse(req.body.num1);
+  let firstInput = Number(req.body.num1);
+  console.log('typof firstinput', typeof(firstInput));
   let secondInput = Number(req.body.num2);
 
   let result = firstInput + secondInput;
@@ -26,18 +28,21 @@ app.post("/", function (req, res) {
   res.send(`The substruction result = ${result}`);
 });
 
-//Substract
-app.post("/", function (req, res) {
-  console.log("rea.body ---->", req.body);
-  console.log("req.body.num1 ", req.body.num1);
+//Subtract
+app.post("/sub", function (req, res) {
+  console.log('this is Subtract');
+    
+  console.log("reg.body ---->", req.body);
+  console.log("req.body.num1 from Sum ", req.body.num1);
+  console.log("req.body.num2 from Sum ", req.body.num2);
 
-  let firstInput = JSON.parse(req.body.num1);
-  let secondInput = Number(req.body.num2);
+  let firstInput2 = Number(req.body.num3);
+  let secondInput2 = Number(req.body.num4);
 
-  let result = firstInput - secondInput;
-  console.log("result", reuslt);
+  let result2 = firstInput2 - secondInput2;
+  console.log("result", result2);
 
-  res.send(`The substruction result = ${result}`);
+  res.send(`The substruction result = ${result2}`);
 });
 
 // BMI Calculator

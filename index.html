@@ -7,13 +7,15 @@
     <title>Calculator</title>
   </head>
   <body>
-    <form action="/" method="post">
-        <button type="submit" name="button">Sum up</button>
-      <input type="text" name="num1" placeholder="1st Number" />
-      <input type="text" name="num2" placeholder="2nd Number" />
+    <form action="/sum" method="post">
+      <button type="submit" name="button">Sum up</button>
+      <input type="number" name="num1" placeholder="1st Number" />
+      <input type="number" name="num2" placeholder="2nd Number" />
     </form>
-    <form action="/" method="post">
-        <button type="submit" name="button">Subtract</button>
+    <form action="/sub" method="post">
+      <button type="submit" name="button">Subtract</button>
+      <input type="number" name="num3" placeholder="1st Number" />
+      <input type="number" name="num4" placeholder="2nd Number" />
     </form>
   </body>
 </html>
