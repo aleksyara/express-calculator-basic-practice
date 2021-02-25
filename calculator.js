@@ -1,3 +1,5 @@
+"use strict";
+
 const exppress = require("express");
 const bodyParser = require("body-parser");
 
@@ -33,14 +35,23 @@ app.post("/", function (req, res) {
   let secondInput = Number(req.body.num2);
 
   let result = firstInput - secondInput;
-    console.log('result', reuslt);
-    
+  console.log("result", reuslt);
+
   res.send(`The substruction result = ${result}`);
 });
 
-//Just for test puropose to see how routing works
-app.get("/todo", function (req, res) {
-  res.sendFile(__dirname + "/todo.html");
+// BMI Calculator
+app.get("/bmicalculator", function (req, res) {
+  res.sendFile(__dirname + "/bmiCalculator.html");
+});
+
+app.post("/bmicalculator/result", function (req, res) {
+  let height = parseFloat(req.body.h);
+  let weight = parseFloat(req.body.w);
+
+  let result = weight / (height * height);
+
+  res.send(`Your BMI is ${result}`);
 });
 
 app.listen(3000, function () {
